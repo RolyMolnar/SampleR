@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.Statement;
 
 public class Prezentare extends JFrame {
-    JButton exitButton, registerButton, listButton;
+    JButton exitButton, incepeButton, rezultateButton;
     BufferedImage img;
     Statement myStmt;
 
@@ -70,23 +70,27 @@ public class Prezentare extends JFrame {
         exitButton = new JButton("EXIT");
         exitButton.setPreferredSize(new Dimension(150, 40));
         exitButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        exitButton.setBackground(Color.red);
         //Butonul register
-        registerButton = new JButton("REGISTER");
-        registerButton.setPreferredSize(new Dimension(150, 40));
-        registerButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        incepeButton = new JButton("INCEPE");
+        incepeButton.setPreferredSize(new Dimension(150, 40));
+        incepeButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        incepeButton.setBackground(Color.yellow);
         // Butonul list
-        listButton = new JButton("LIST");
-        listButton.setPreferredSize(new Dimension(150, 40));
-        listButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        rezultateButton = new JButton("REZULTATE");
+        rezultateButton.setPreferredSize(new Dimension(150, 40));
+        rezultateButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        rezultateButton.setBackground(new Color(0, 128, 255));
         // Face ca butoanele sa poata fi receptive la events
         ListenForButton listenForButton = new ListenForButton();
         exitButton.addActionListener(listenForButton);
-        registerButton.addActionListener(listenForButton);
-        listButton.addActionListener(listenForButton);
+        incepeButton.addActionListener(listenForButton);
+        rezultateButton.addActionListener(listenForButton);
         // Adauga butoanele la buttonPanel
         buttonPanel.add(exitButton);
-        buttonPanel.add(registerButton);
-        buttonPanel.add(listButton);
+        buttonPanel.add(incepeButton);
+        buttonPanel.add(rezultateButton);
+        buttonPanel.setOpaque(false);
         // Adauga buttonPanel la mainPanel
         mainLabel.add(buttonPanel, BorderLayout.SOUTH);
         // Adauga textul la mainPAnel
@@ -108,14 +112,12 @@ public class Prezentare extends JFrame {
                 // Inchide fereastra Welcome
                 System.exit(0);
 
-            }// Sursa eventului este butonul "REGISTER"
-            else if (e.getSource() == registerButton) {
-                // Deschide fereastra Register
-                // Inchide fereastra Welcome
+            } else if (e.getSource() == incepeButton) {
+                new Int1(myStmt);
                 dispose();
 
             }// Sursa eventului este butonul "LIST"
-            else if (e.getSource() == listButton) {
+            else if (e.getSource() == rezultateButton) {
                 // Deschide fereastra List
                 // Inchide fereastra Welcome
                 dispose();
