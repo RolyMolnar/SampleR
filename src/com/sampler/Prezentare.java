@@ -52,11 +52,11 @@ public class Prezentare extends JFrame {
 
         JLabel instructiuni = new JLabel("", JLabel.CENTER);
 
-        String txt = "<html><h1 align='center'; padding: 20;>Instructiuni</h1>";
+        String txt = "<html><h1 align='center'; padding: 30;>Instructiuni</h1>";
         txt = txt + "</br>";
 
         txt = txt + "<font style=\"font-family: 'Courier New'; font-size: 18 pt; text-align: 'center'; text-justify: inter-word;\">";
-        txt = txt + "<p align='center';>Prin acest sondaj de opinie am dori sa cunoastem parerile oamenilor<br/>";
+        txt = txt + "<p align='center'; padding:10;>Prin acest sondaj de opinie am dori sa cunoastem parerile oamenilor<br/>";
         txt = txt + "in legatura cu situatia politica a Mun. Petrosani.<br/>";
         txt = txt + "Daca sunteti de acord sa ne raspundeti la intrebari, speram sa nu va rapim mai mult de 15 de minute. <br/>";
         txt = txt + "Datele obtinute sunt confidentiale, ele fiind necesare doar pentru a fi prelucrate statistic.<p/>";

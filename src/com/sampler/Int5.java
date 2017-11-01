@@ -11,15 +11,15 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Statement;
 
-public class Int1 extends JFrame {
+public class Int5 extends JFrame {
     BufferedImage img;
     Statement myStmt;
     JRadioButton var1, var2, var3, var4;
     JButton inainte, inapoi, exit;
     ButtonGroup varGroup;
 
-    public Int1(Statement myStmt) {
-        this.setTitle("SampleR - Intrebarea nr. 1");
+    public Int5(Statement myStmt) {
+        this.setTitle("SampleR - Intrebarea nr. 5");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
@@ -37,12 +37,12 @@ public class Int1 extends JFrame {
         this.setContentPane(mainLabel);
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
 
-        JLabel intreb1 = new JLabel("Intrebarea nr. 1 ", JLabel.CENTER);
+        JLabel intreb1 = new JLabel("Intrebarea nr. 5 ", JLabel.CENTER);
         intreb1.setFont(new Font("Arial", Font.BOLD, 28));
         intreb1.setBorder(new EmptyBorder(50, 0, 150, 0));
         JLabel textIntrebare = new JLabel("", JLabel.CENTER);
-        String txt = "<html><font style=\"font-family: 'Courier New'; font-size: 20 pt; text-align: 'center'; text-justify: inter-word;\"<p align='center';>Dacă duminica viitoare ar fi alegeri pentru funcţia de Preşedinte al României, </br>";
-        txt = txt + "v-aţi prezenta la vot?";
+        String txt = "<html><font style=\"font-family: 'Courier New'; font-size: 20 pt; text-align: 'center'; text-justify: inter-word;\"<p align='center';> Indiferent dacă v-aţi prezenta sau nu la vot, </br>";
+        txt = txt + " intenţia dvs de vot spre care dintre posibilii candidaţii pentru Senat s-ar îndrepta?";
 
         textIntrebare.setText(txt);
         JPanel container = new JPanel();
@@ -52,50 +52,37 @@ public class Int1 extends JFrame {
         varPanel.setLayout(new BoxLayout(varPanel, BoxLayout.PAGE_AXIS));
         varGroup = new ButtonGroup();
 
-        var1 = new JRadioButton("Cu siguranta da");
+        var1 = new JRadioButton("Nicula Cosmin");
         var1.setPreferredSize(new Dimension(300, 40));
         var1.setFont(new Font("Arial", Font.PLAIN, 18));
         var1.setOpaque(false);
         var1.setContentAreaFilled(false);
         var1.setBorderPainted(false);
-        var1.setActionCommand("1");
 
 
-        var2 = new JRadioButton("Cred ca da");
+        var2 = new JRadioButton("Vochitoiu Haralambie");
         var2.setPreferredSize(new Dimension(300, 40));
         var2.setFont(new Font("Arial", Font.PLAIN, 18));
         var2.setOpaque(false);
         var2.setContentAreaFilled(false);
         var2.setBorderPainted(false);
-        var2.setActionCommand("2");
 
-        var3 = new JRadioButton("Cred ca nu");
+        var3 = new JRadioButton("Altul");
         var3.setPreferredSize(new Dimension(300, 40));
         var3.setFont(new Font("Arial", Font.PLAIN, 18));
         var3.setOpaque(false);
         var3.setContentAreaFilled(false);
         var3.setBorderPainted(false);
-        var3.setActionCommand("3");
-
-        var4 = new JRadioButton("Cu siguranta nu");
-        var4.setPreferredSize(new Dimension(300, 40));
-        var4.setFont(new Font("Arial", Font.PLAIN, 18));
-        var4.setOpaque(false);
-        var4.setContentAreaFilled(false);
-        var4.setBorderPainted(false);
-        var4.setActionCommand("4");
 
 
         varGroup.add(var1);
         varGroup.add(var2);
         varGroup.add(var3);
-        varGroup.add(var4);
 
 
         varPanel.add(var1);
         varPanel.add(var2);
         varPanel.add(var3);
-        varPanel.add(var4);
         varPanel.setOpaque(false);
 
 
@@ -157,17 +144,14 @@ public class Int1 extends JFrame {
                 System.exit(0);
 
             } else if (e.getSource() == inainte) {
-                String intre1 = varGroup.getSelection().getActionCommand();
-                System.out.println(intre1);
-                if (intre1 != null) {
-                    new Int2(myStmt);
-                    dispose();
-                }
+                new Int6_1(myStmt);
+                dispose();
+
             }// Sursa eventului este butonul "LIST"
             else if (e.getSource() == inapoi) {
                 // Deschide fereastra List
                 // Inchide fereastra Welcome
-                new Prezentare(myStmt);
+                new Int4(myStmt);
                 dispose();
             }
         }
