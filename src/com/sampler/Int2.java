@@ -102,6 +102,13 @@ public class Int2 extends JFrame {
         var7.setContentAreaFilled(false);
         var7.setBorderPainted(false);
 
+        var1.setActionCommand("1");
+        var2.setActionCommand("2");
+        var3.setActionCommand("3");
+        var4.setActionCommand("4");
+        var5.setActionCommand("5");
+        var6.setActionCommand("6");
+        var7.setActionCommand("7");
 
         varGroup.add(var1);
         varGroup.add(var2);
@@ -180,8 +187,12 @@ public class Int2 extends JFrame {
                 System.exit(0);
 
             } else if (e.getSource() == inainte) {
-                new Int3(myStmt);
-                dispose();
+                String intre2 = varGroup.getSelection().getActionCommand();
+                System.out.println(intre2);
+                if (intre2 != null) {
+                    new Int3(myStmt);
+                    dispose();
+                }
 
             }// Sursa eventului este butonul "LIST"
             else if (e.getSource() == inapoi) {

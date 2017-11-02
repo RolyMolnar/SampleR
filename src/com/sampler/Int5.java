@@ -79,6 +79,10 @@ public class Int5 extends JFrame {
         varGroup.add(var2);
         varGroup.add(var3);
 
+        var1.setActionCommand("1");
+        var2.setActionCommand("2");
+        var3.setActionCommand("3");
+
 
         varPanel.add(var1);
         varPanel.add(var2);
@@ -144,8 +148,12 @@ public class Int5 extends JFrame {
                 System.exit(0);
 
             } else if (e.getSource() == inainte) {
-                new Int6_1(myStmt);
-                dispose();
+                String intre5 = varGroup.getSelection().getActionCommand();
+                System.out.println(intre5);
+                if (intre5 != null) {
+                    new Int6_1(myStmt);
+                    dispose();
+                }
 
             }// Sursa eventului este butonul "LIST"
             else if (e.getSource() == inapoi) {
