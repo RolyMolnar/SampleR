@@ -3,6 +3,7 @@ package com.sampler;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,12 +11,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Statement;
+import java.util.Vector;
 
 public class Sumar extends JFrame {
     BufferedImage img;
     Statement myStmt;
-    JRadioButton var1, var2, var3, var4;
     JButton inainte, inapoi, exit;
+    Vector data, row, columnNames;
 
 
     public Sumar(Statement myStmt) {
@@ -38,6 +40,74 @@ public class Sumar extends JFrame {
         this.setContentPane(mainLabel);
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
 
+        JPanel listPanel = new JPanel();
+        listPanel.setOpaque(false);
+        columnNames = new Vector();
+        columnNames.add("Intrebare");
+        columnNames.add("Raspuns");
+
+        data = new Vector();
+        row = new Vector();
+        row.add("Intrebarea nr. 1");
+        row.add(Int1.intre1);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.2");
+        row.add(Int2.intre2);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.3");
+        row.add(Int3.intre3);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.4");
+        row.add(Int4.intre4);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.5");
+        row.add(Int5.intre5);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.6.1");
+        row.add(Int6_1.intre6_1);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.6.2");
+        row.add(Int6_2.intre6_2);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.6.3");
+        row.add(Int6_3.intre6_3);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.7");
+        row.add(Int7.intre7);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.8");
+        row.add(Int8.intre8);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.9");
+        row.add(Int9.intre9);
+        data.add(row);
+        row = new Vector();
+        row.add("Intrebarea nr.10");
+        row.add(Int10.intre10);
+        data.add(row);
+
+
+        JTable jTable = new JTable(data, columnNames);
+        jTable.setRowHeight(jTable.getRowHeight() + 10);
+        jTable.setFont(new Font("Arial", Font.PLAIN, 18));
+        JTableHeader header = jTable.getTableHeader();
+        header.setFont(new Font("Arial", Font.BOLD, 18));
+        JScrollPane scrollPane = new JScrollPane(jTable);
+        scrollPane.setBorder(BorderFactory.createEmptyBorder());
+        scrollPane.setOpaque(false);
+        listPanel.add(scrollPane);
+        listPanel.setOpaque(false);
+        mainLabel.add(listPanel, BorderLayout.CENTER);
 
         // Creaza buttonPanel pentru butoane
         JPanel buttonPanel = new JPanel();

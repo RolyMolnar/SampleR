@@ -17,6 +17,7 @@ public class Int10 extends JFrame {
     JRadioButton var1, var2, var3, var4, var5;
     JButton inainte, inapoi, exit;
     ButtonGroup varGroup;
+    static String intre10;
 
     public Int10(Statement myStmt) {
         this.setTitle("SampleR - Intrebarea nr. 10");
@@ -168,7 +169,7 @@ public class Int10 extends JFrame {
                 System.exit(0);
 
             } else if (e.getSource() == inainte) {
-                String intre10 = varGroup.getSelection().getActionCommand();
+                intre10 = varGroup.getSelection().getActionCommand();
                 System.out.println(intre10);
                 if (intre10 != null) {
                     new Sumar(myStmt);

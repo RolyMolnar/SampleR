@@ -17,6 +17,7 @@ public class Int6_3 extends JFrame {
     JRadioButton var1, var2, var3, var4;
     JButton inainte, inapoi, exit;
     ButtonGroup varGroup;
+    static String intre6_3;
 
     public Int6_3(Statement myStmt) {
         this.setTitle("SampleR - Intrebarea nr. 6.3");
@@ -148,7 +149,7 @@ public class Int6_3 extends JFrame {
                 System.exit(0);
 
             } else if (e.getSource() == inainte) {
-                String intre6_3 = varGroup.getSelection().getActionCommand();
+                intre6_3 = varGroup.getSelection().getActionCommand();
                 System.out.println(intre6_3);
                 if (intre6_3 != null) {
                     new Int7(myStmt);
